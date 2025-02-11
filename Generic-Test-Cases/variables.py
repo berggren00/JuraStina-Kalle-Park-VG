@@ -1,9 +1,9 @@
-
 import os
 
 current_directory = os.getcwd().replace('\\', '/')
 browser = "chrome"
 url = f"file:///{current_directory}/resources/website/jurap.html"
+
 # TODO: Create regions
 register_button = "id:register-nav"
 username_field = "id:reg-username"
