@@ -7,7 +7,8 @@ Test Setup  Open Browser  ${URL}  ${BROWSER}
 *** Test Cases ***
 User registers successfully
 #Add proper tags + documentation
-    [Tags]    Andreas_Refactor_Tan
+    [Tags]    Andreas    Tan_Refactor
+    [Documentation]    Assures that the user is able to register an account.
     Given User is on the register page
     When They enter a valid username and password
     And Click the register button
@@ -15,7 +16,8 @@ User registers successfully
     Sleep    3s
 
 User logs in successfully
-    [Tags]    Andreas_Refactor_Tan
+    [Tags]    Andreas    Tan_Refactor
+    [Documentation]    Assures that the user is able to login with a registered account.
     Given The user has an account
     When They enter valid login credentials
     And Click the login button
@@ -23,7 +25,8 @@ User logs in successfully
     Sleep    3s
 
 User logs out successfully
-    [Tags]    Andreas_Refactor_Tan
+    [Tags]    Andreas    Tan_Refactor
+    [Documentation]    Assures that the user is able to logout when they are currently logged in.
     Given The user has an account
     When The user is logged in
     Then They should be able to logout
