@@ -6,3 +6,11 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+
+
+### robotframework template
+log.html
+output.xml
+report.html
+selenium-screenshot-*.png
+/_pycache_/	
