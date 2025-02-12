@@ -48,3 +48,12 @@ The user is logged in
     User is on the login page
     They enter valid login credentials
     Click the login button
+
+They enter invalid login credentials
+    Sleep    2s
+    Input Text    ${LOGIN_USERNAME_FIELD}    ${INVALID_USERNAME}
+    Input Text    ${LOGIN_PASSWORD_FIELD}    ${INVALID_PASSWORD}
+
+They should not be able to login
+    # Confirms by checking if the login button is present
+    Wait Until Page Contains Element    ${LOGIN_MESSAGE}    timeout=10s

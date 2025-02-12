@@ -9,6 +9,8 @@ url = f"file:///{current_directory}/resources/website/jurap.html"
 # region Credentials related variables
 username = "test123"
 password = "test12345"
+invalid_username = "123test"
+invalid_password = "12345test"
 
 username_field = "id:reg-username"
 password_field = "id:reg-password"
@@ -17,6 +19,8 @@ login_password_field = "id:login-password"
 
 submit_register = "css:#register-form button[type='submit']"
 submit_login = "css:#login-form > button[type='submit']"
+
+login_message = "id:login-message"
 # endregion
 
 # region Menu-bar variables

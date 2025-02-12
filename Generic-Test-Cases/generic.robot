@@ -24,6 +24,15 @@ User logs in successfully
     Then They should be able to login
     Sleep    3s
 
+User tries to log in with wrong credentials
+    [Tags]    Andreas
+    [Documentation]    Assures that the user is unable to login with invalid credentials.
+    Given The user has an account
+    When They enter invalid login credentials
+    And Click the login button
+    Then They should not be able to login
+    Sleep    3s
+
 User logs out successfully
     [Tags]    Andreas    Tan_Refactor
     [Documentation]    Assures that the user is able to logout when they are currently logged in.
