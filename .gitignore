@@ -15,3 +15,5 @@ report.html
 selenium-screenshot-*.png
 /_pycache_/
 /Generic-Test-Cases/__pycache__
+/Kim-Family/__pycache__
+/resources/global_files/__pycache__

@@ -65,15 +65,42 @@ Short summary of how the test should be (temp):
 
 - Compare both price-tags (They should match)
 
-#### Gherkin
-
 ---
 
 ---
 ### Kim och Familjen
-Short summary of how the test should be (temp):
+
+This case is about a family of 4, 2 adults and 2 children. They plan to make a trip to 
+the park during a weekend to allow the children to take a **closer** look at the dinosaurs. This means that
+the family needs VIP tickets to both book a "`Herbivore Tour with Feeding`", and book a date during the `weekend`.
+The test related to this case need to first pass the generic tests, then test ticket types and VIP related functions. 
+
+#### User-story
+`As a:` Family of 4
+
+`We want:` To purchase 4 VIP tickets
+
+`So that:` To visit the park during a weekend
+
+`and:` Watch the dinosaurs up close.
+
+#### Short summary of what we need to test based on user-story:
 
 - Create user
 - Login
-- Purchase ticket (2 adults, 2 children, all VIP)
-- Book weekend pass for feeding and extreme (both being VIP safaris)
+- Purchase ticket
+  - Being able to purchase both ticket types: adult and children
+  - Being able to buy a VIP ticket
+- Book tours
+  - Book weekend pass for feeding and extreme tour (VIP)
+
+#### Example test case:
+
+- Create user 1
+  - Purchase tickets
+    - 2 Adult tickets
+    - 2 Children tickets
+  - Book tours
+    - Book VIP tours (Feeding Dino's)
+    - Book the tour during weekend
+- Complete full purchase
