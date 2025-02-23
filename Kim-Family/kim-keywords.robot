@@ -19,7 +19,12 @@ Two 'VIP' child tickets to the cart
     [Documentation]    Assures that the user is able to purchase two VIP child tickets.
     Click Element    ${nav_menu_ticket}
     Wait Until Element Is Visible    ${ticket_category_dropdown}    10s
-    Select From List By Index    ${ticket_category_dropdown}    1
+    #TODO: We can select by value instead and potentially make this more universal!-TT
+    #Also allows us to maybe create a dictionary/list to count x amount of ticket types
+    #to then compare with at cart/checkout.
+    #https://robotframework.org/robotframework/latest/libraries/Collections.html
+    Select From List By Value    ${ticket_category_dropdown}    VIP
+    #Select From List By Index    ${ticket_category_dropdown}    1
     Select From List By Index    ${ticket_type_dropdown}    1
     Input Text    ${ticket_quantity}    2
     Click Element    ${add_ticket_to_cart_button}
@@ -30,6 +35,7 @@ They add a family package of VIP tickets to the cart    # 2 adults, 2 children
     [Documentation]    Assures that the user has added four VIP tickets to the cart.
     They add two 'VIP' adult tickets to the cart
     Two 'VIP' child tickets to the cart
+    They should be able to see the ticket in the cart
 
 They add a VIP tour booked for next ${chosen_day} to the cart
     [Documentation]    Books a single VIP safari tour for the specified day
@@ -41,9 +47,10 @@ They add a VIP tour booked for next ${chosen_day} to the cart
     Handle Alert   
 
 
-They book four VIP safari tours on the weekend
-    [Documentation]    Books four VIP safari tours for the next Sunday
-    FOR    ${index}    IN RANGE    4
-        They add a VIP tour booked for next Sunday to the cart   
+They book ${ticket_count} VIP safari tours on the weekend
+    [Documentation]    Books the input amount of VIP safari tours for the next Sunday
+    [Tags]    Andreas    Tan_refactor
+    FOR    ${index}    IN RANGE    ${ticket_count}
+        They add a VIP tour booked for next Sunday to the cart
     END
     They should be able to see the tour in the cart 
