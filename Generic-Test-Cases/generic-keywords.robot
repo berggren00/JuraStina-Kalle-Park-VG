@@ -30,6 +30,7 @@ They should be redirected to the login page
 ### Login ###
 The user has a registered account
     [Tags]    Given
+    # send in as arguments
     They Attempt To Register With Valid Credentials
 
 They log in with '${credential_type}' credentials
@@ -123,7 +124,6 @@ They add a tour booked for next ${chosen_day} by navigating the calendar dropdow
 Selecting ${chosen_day} from dropdown calendar
     [Tags]    Under_review    Daniel    Tan_refactor
     Set Test Variable    ${selected_day}    ${chosen_day}    #Sets a "file wide" variable so it can be accessed later on.
-
     ${input_count}    get_weekday_delta_offset    ${chosen_day}    #importing library of our file allows calls to funcs. -TT
     # DESPERATION KICKING IN - DK
     # Tried several methods while waiting for food, and what I found as I gave up was something about to go eat was
