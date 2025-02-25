@@ -22,9 +22,7 @@ Kim logins successfully
     When They log in with 'VALID' credentials
     Then They should be logged in and be redirected to the homepage
 
-#upon further inspection, these 2 tests below might need to be redone slightly
-#Clarifcation over what the test is actually looking for. I have refactored the actual *purchase* of both
-# the tickets and the tours now. Since the test to check if the adding of the items are done in generic -TT
+
 Kim purchases tickets (2 adults, 2 children)
     [Documentation]  User should be able to purchase tickets
     [Tags]  Andreas    Tan_refactor
