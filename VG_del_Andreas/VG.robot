@@ -3,6 +3,8 @@ Library  SeleniumLibrary
 Resource    ../Generic-Test-Cases/generic-keywords.robot
 Resource    ../Kim-Family/kim-keywords.robot
 Resource    VG-keywords.robot
+Resource    ../Snåla-Kalle-Scenario/snåla-kalle-keywords.robot
+Variables  ../Snåla-Kalle-Scenario/snåla-kalle-variables.py
 Variables  ../Generic-Test-Cases/variables.py
 Variables    ../Kim-Family/kim-variables.py
 Test Setup  Open Browser  ${URL}  ${BROWSER}    options=add_experimental_option("prefs", {"intl.accept_languages": "en-GB"})
@@ -25,3 +27,23 @@ Checkout button should be disabled when cart is empty
     Then The checkout button should be disabled
     When They add a family package of VIP tickets to the cart
     Then The checkout button should be enabled
+
+Items should maintain in cart after logging out and back in
+    [Tags]    Andreas
+    [Documentation]    Assures that the items in the cart are maintained after logging out and back in.
+    Given The User Is Logged In
+    And They add a 'VIP' ticket to the cart
+    When They click the logout button
+    And They log in with 'VALID' credentials
+    Sleep    2s
+    Then They should be able to see the ticket in the cart
+
+User can clear entire cart
+    [Tags]    Andreas
+    [Documentation]    Verifies that user can remove all items from cart one by one.
+    Given The User Is Logged In
+    And They add multiple tickets to the cart
+    When They clear the entire cart
+    Then The cart should be empty
+    And The checkout button should be disabled
+    

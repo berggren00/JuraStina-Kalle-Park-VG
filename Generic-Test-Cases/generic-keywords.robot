@@ -106,6 +106,7 @@ They add a '${ticket_type}' ticket to the cart
 
 They should be able to see the ticket in the cart
     [Tags]    Then
+    Wait Until Page Contains Element    ${nav_menu_cart}    timeout=10s
     Click Element    ${nav_menu_cart}
     Wait Until Element Is Visible    ${cart_section}    10s
     ${listed_items}    Get Text    ${cart_details}
